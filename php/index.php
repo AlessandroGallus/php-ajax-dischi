@@ -14,6 +14,7 @@
   <title>Dischi</title>
 </head>
 <body>
+
   <div class="wrapper-dischi">
     <?php 
       foreach($database as $data){

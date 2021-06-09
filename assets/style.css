@@ -6,6 +6,17 @@
 body{
   background-color: #1E2D3B;
 }
+header{
+  height: 70px;
+  width:100%;
+  background-color: #2E3A46;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.left .right{
+  margin: auto 10px;
+}
 .wrapper-dischi{
   display: flex;
   width:80%;

@@ -6,16 +6,31 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js" integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="../assets/style.css">
   <title>Dischi</title>
 </head>
 <body>
   <div id="app">
-    
+    <header>
+
+      <div class="left">
+        <i class="fab fa-spotify"></i>
+      </div>
+      <div class="right">
+        <select name="genere" id="genre" @change="stampa" v-model="key">
+          <option value="0"  default>All</option>
+          <option
+            v-for="(genere, key)  in generi"
+          :value="key + 1">{{genere}}</option>
+        </select>
+      </div>
+  
+    </header>
     <div class="wrapper-dischi">
       <div
        class="disco"
-       v-for="disco in db"
+       v-for="disco in dischi_filtrati"
       >
         <img :src="disco.poster" alt="poster disco">
         <h2>{{disco.title}}</h2>
